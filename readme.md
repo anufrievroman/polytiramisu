@@ -30,9 +30,9 @@ format = <label>
 tail = true
 ```
 
-# Settings
+## Settings
 
-In the `polytiramisu.sh` you can choose the character limit, notification duration, and nofication fields to diplay. You can use #source, #summary, and #body in the line that says:
+In the `polytiramisu.sh` you can choose the character limit `char_limit` and notification duration `display_duration`. To choose nofication fields to diplay, add or remove `#source`, `#summary`, and `#body` in the line that says:
 
 ```
 tiramisu -o '#summary #body' |
