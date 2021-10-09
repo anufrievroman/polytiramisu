@@ -1,6 +1,6 @@
 # Polytiramisu
 
-Simple cript to display tiramisu notifications in polybar. 
+Simple script to display tiramisu notifications in polybar. 
 
 This was inspired by [polynotifications](https://github.com/tam-carre/polynotifications) scripts (which did not work for me), but made in a more minimal way and is meant to work out of the box without special settings for tiramisu. At the moment there is no notification history, each notification is shown once and that's it.
 
