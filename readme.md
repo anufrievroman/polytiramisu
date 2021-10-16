@@ -8,7 +8,8 @@ This was inspired by [polynotifications](https://github.com/tam-carre/polynotifi
 
 ## Installation
 
-1. Install [tiramisu](https://github.com/Sweets/tiramisu) notification deamon.
+
+1. Install [tiramisu](https://github.com/Sweets/tiramisu) notification daemon.
 
 2. Download `polytiramisu.sh` to `~/.config/polybar/scripts/` and make it executable:
 
@@ -31,10 +32,22 @@ format = <label>
 tail = true
 ```
 
+## Troubleshooting
+
+To verify that notifications are working, send a test notification: `notify-send "Test notification"`
+
+If you see no notifications, try these steps:
+
+- Make sure you have no other notification daemons (for example, dunst) running. Only one can run one notification daemon at a time.
+- You don't need to manually run tiramisu, the polytiramisu script will run it. So `killall tiramisu` and restart the polybar.
+- If you restarted polybar several times, there might be several zombie instances of polytiramisu running. Kill them all (using htop for example) or just logout and log back in to start from fresh.
+
 ## Settings
 
-In the `polytiramisu.sh` you can choose the character limit `char_limit` and notification duration `display_duration`. To choose nofication fields to diplay, add or remove `#source`, `#summary`, and `#body` in the line that says:
-
+- In the `polytiramisu.sh` you can choose the character limit `char_limit` and notification duration `display_duration`.
+- To choose notification fields to display, add or remove `#source`, `#summary`, and `#body` in the line that says `tiramisu -o '#summary #body' |`.
+- You can customize font and color of notifications via polybar settings. For example:
 ```
-tiramisu -o '#summary #body' |
+format-font = 2
+format-foreground = #ffffff
 ```
