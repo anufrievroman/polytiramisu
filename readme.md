@@ -46,6 +46,7 @@ If you see no notifications, try these steps:
 
 - In the `polytiramisu.sh` you can choose the character limit `char_limit` and notification duration `display_duration`.
 - To choose notification fields to display, add or remove `#source`, `#summary`, and `#body` in the line that says `tiramisu -o '#summary #body' |`.
+- If you use nerdfont, you can replace app names with icons by setting `use_nerd_font="true"` and adding corresponding lines (see examples in the script).
 - You can customize font and color of notifications via polybar settings. For example:
 ```
 format-font = 2
