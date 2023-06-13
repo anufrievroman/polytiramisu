@@ -1,6 +1,6 @@
 # Polytiramisu
 
-Simple script to display tiramisu notifications in polybar. 
+Simple script to display tiramisu notifications in polybar, waybar, and other bars.
 
 This was inspired by [polynotifications](https://github.com/tam-carre/polynotifications) scripts (which did not work for me), but made in a more minimal way and is meant to work out of the box without special settings for tiramisu. At the moment there is no notification history, each notification is shown once and that's it.
 
@@ -8,10 +8,13 @@ This was inspired by [polynotifications](https://github.com/tam-carre/polynotifi
 
 ## Installation
 
+#### Install tiramisu
 
-1. Install [tiramisu](https://github.com/Sweets/tiramisu) notification daemon.
+Install [tiramisu](https://github.com/Sweets/tiramisu) notification daemon. Make sure to delete other notification deamons (like dunst) from your system.
 
-2. Download `polytiramisu.sh` to `~/.config/polybar/scripts/` and make it executable:
+#### Download this script
+
+Download `polytiramisu.sh` to `~/.config/polybar/scripts/` or any other folder and make it executable:
 
 ```
 git clone https://github.com/anufrievroman/polytiramisu
@@ -19,7 +22,9 @@ cp polytiramisu/polytiramisu.sh $HOME/.config/polybar/scripts/
 chmod =rwx $HOME/.config/polybar/scripts/polytiramisu.sh
 ```
 
-3. Add this module in your polybar config (and verify the path):
+#### Add to Polybar
+
+Add this module in your polybar config (and verify the path):
 
 ```
 modules-left = polytiramisu
@@ -30,6 +35,19 @@ type = custom/script
 exec = ~/.config/polybar/scripts/polytiramisu.sh
 format = <label>
 tail = true
+```
+
+#### Add to Waybar
+
+Add this module in your waybar config (and verify the path):
+
+```
+"modules-left": ["custom/polytiramisu"],
+
+"custom/polytiramisu": {
+    "format": "{} ",
+    "exec": "bash ~/.config/waybar/scripts/polytiramisu.sh",
+},
 ```
 
 ## Troubleshooting
